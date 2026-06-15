@@ -3,40 +3,69 @@
     padding: 0;
     box-sizing: border-box;
 }
-.crimson-text-regular {
-  font-family: "Crimson Text", serif;
-  font-weight: 400;
-  font-style: normal;
-}
+
 body {
     background-image: url("../img/fondo.jpg");
 	font-family:  "Courier New"; 
+    color: #fff;
 }
 .contenedor {
-    max-width: 960px; /* Ancho máximo solicitado en píxeles */
-    width: 90%;       /* Asegura flexibilidad en pantallas móviles */
-    margin: 2rem auto; /* Centra el bloque en la pantalla */
+    max-width: 960px; 
+    width: 90%;      
+    margin: 2rem auto; 
     background-color: rgba(15, 15, 15, 0.9); /* Color de fondo con opacidad */
     padding: 2.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
+/* ==========================================================================
+   3. TIPOGRAFÍAS (Google Fonts para títulos)
+   ========================================================================== */
+h1, h2, h3 .crimson-text-regular {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+h2 { font-size: 1.75rem; margin: 2rem 0 1rem 0; border-bottom: 1px solid #333; padding-bottom: 0.5rem; }
+h3 { font-size: 1.25rem; margin: 1.2rem 0 0.5rem 0; color: #50b3a2; }
+
+p {
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    text-align: justify;
+    colo
+}
+
+/* Elementos destacados con <em> */
+em {
+    font-style: italic;
+    color: #ffdd67;
+}
+
+.main-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    border-bottom: 2px solid #222;
+    padding-bottom: 1.5rem;
+}
+
 /* Navegación */
 .main-nav ul {
-    display: inline-block;
-    justify-content: center;       
+    list-style: none;
+    display: flex;       
+    justify-content: center;
+    gap: 1rem;          
     flex-wrap: wrap;     
-    list-style-type: none;
-    padding: 1em;
-    background: rgb(8, 102, 114);
-    display: flex;
-    justify-content: space-around;
-    gap: 1rem;   
 }
 
 .main-nav a {
     text-decoration: none;
-    color: #faf8f8;
+    color: #bbb;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.95rem;
     padding: 0.5rem 1rem;
@@ -44,13 +73,111 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Comportamientos de los Links (Hover y Activo) */
 .main-nav a:hover {
     color: #ffffff;
-    background-color: #e77d44;
+    background-color: #222;
 }
 
 .main-nav a.active {
     color: #ffffff;
-    background-color: #50b3a2; /* Destaca la página actual */
+    background-color: #50b3a2; 
     font-weight: bold;
+}
+
+/* ==========================================================================
+   5. COMPONENTES Y BLOQUES ESPECÍFICOS (Citas, Listas, Imágenes)
+   ========================================================================== */
+/* Citas / Manifiestos */
+.destacado blockquote {
+    background-color: #1a1a1a;
+    border-left: 4px solid #50b3a2;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.destacado blockquote p {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #fff;
+    line-height: 1.5;
+}
+
+.destacado cite {
+    display: block;
+    text-align: right;
+    margin-top: 0.5rem;
+    color: #888;
+}
+
+/* Listas */
+.lista-contenedor {
+    margin-bottom: 1.5rem;
+}
+
+.lista-estilizada {
+    list-style: square;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.lista-estilizada li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Imágenes multimedia responsivas */
+.imagen-bloque {
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.imagen-bloque img {
+    width: 100%;       
+    height: auto;      
+    display: block;
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   6. CONTENEDOR DE VIDEO RESPONSIVO (YouTube 16:9)
+   ========================================================================== */
+.video-contenedor {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    margin: 2rem 0;
+    border-radius: 4px;
+}
+
+.video-contenedor iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ==========================================================================
+   7. PIE DE PÁGINA
+   ========================================================================== */
+.main-footer {
+    margin-top: 3rem;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+    color: #777;
+    width: 97%;
+    max-width: 1200px;
+	text-align: center;
+    background: rgb(232, 185, 144);
+    padding: 1em;
+}
+
+.main-footer a {
+    color: #50b3a2;
+    text-decoration: none;
+}
+
+.main-footer a:hover {
+    text-decoration: underline;
+}
